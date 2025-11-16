@@ -179,102 +179,72 @@
         }
 
         /* Features Section */
-        .features {
-            padding: 80px 0;
-            background: #fff;
+        .feature-section {
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
+        .feature-section.alt-bg {
+            background: #FDFDFD;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
+        .feature-layout {
+            display: flex;
+            align-items: center;
+            gap: 5rem;
         }
 
-        .feature-card {
-            padding: 2.5rem 2rem;
+        .feature-layout > * {
+            flex: 1;
+        }
+        
+        .feature-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-image img {
+            max-width: 100%;
             border-radius: 20px;
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            text-align: center;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: #00ff88;
+        #feature-natural-language .feature-image img {
+            max-width: 70%;
         }
 
-        .feature-icon {
+        #feature-companion .feature-image img {
+            transform: scaleX(-1);
+        }
+
+        .feature-layout.layout-reversed {
+            flex-direction: row-reverse;
+        }
+
+        .feature-image-placeholder {
+            width: 100%;
+            height: 450px;
+            background: #e9ecef;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #6c757d;
+        }
+
+        .feature-text h3 {
+            font-size: 2.5rem;
             margin-bottom: 1.5rem;
-            color: #00ff88;
-        }
-
-        .feature-icon svg {
-            width: 50px;
-            height: 50px;
-            stroke-width: 1.5;
-            margin: 0 auto;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
             color: #333;
+            line-height: 1.3;
         }
 
-        .feature-card p {
+        .feature-text p {
+            font-size: 1.2rem;
             color: #666;
-            line-height: 1.6;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .service-item {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid #e9ecef;
-        }
-
-        .service-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
-            border-color: #00ff88;
-        }
-
-        .service-item h4 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #00ff88;
-            font-weight: 600;
-        }
-
-        .service-item p {
-            color: #666;
+            line-height: 1.7;
         }
 
         /* About Section */
@@ -327,9 +297,16 @@
             .nav-links {
                 display: none;
             }
+            
+            .feature-layout {
+                flex-direction: column !important;
+                gap: 2rem;
+                text-align: center;
+            }
 
-            .features-grid {
-                grid-template-columns: 1fr;
+            .feature-image-placeholder {
+                width: 100%;
+                height: 300px;
             }
         }
     </style>
@@ -339,8 +316,7 @@
         <nav class="container">
             <div class="logo">方便日历</div>
             <ul class="nav-links">
-                <li><a href="#features">功能特色</a></li>
-                <li><a href="#services">服务介绍</a></li>
+                <li><a href="#feature-natural-language">功能特色</a></li>
                 <li><a href="#about">关于方便日历</a></li>
             </ul>
         </nav>
@@ -356,88 +332,62 @@
                     <h1>方便日历</h1>
                     <p>AI智能日程助手，让生活更有序，让成长更轻松</p>
                     <p>通过先进的大语言模型技术，为您提供个性化的日程管理和习惯培养服务</p>
-                    <a href="#features" class="cta-button">立即体验</a>
+                    <a href="#feature-natural-language" class="cta-button">了解更多</a>
                 </div>
             </div>
         </section>
 
-        <section id="features" class="features">
+        <section id="feature-natural-language" class="feature-section">
             <div class="container">
-                <h2 class="section-title">核心功能</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        </div>
-                        <h3>智能日程管理</h3>
-                        <p>基础日程待办管理、苹果原生日程同步、设备同步增强。支持聊天式日程管理，让安排变得更自然。</p>
+                <div class="feature-layout">
+                    <div class="feature-image">
+                        <img src="消息示例.jpg" alt="动动嘴、敲敲字，日程就听话">
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
-                        </div>
-                        <h3>习惯培养系统</h3>
-                        <p>个性化习惯管理，提醒方式多样化（桌面组件、静默提醒、消息通知），帮您建立良好生活习惯。</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                        </div>
-                        <h3>情绪价值支持</h3>
-                        <p>邀约功能、群组邀约、纪念日管理，通过AI技术提供情感支持和社交连接。</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
-                        </div>
-                        <h3>AI智能助手</h3>
-                        <p>AI主动触发功能、智能建议、节假日及天气信息整合，为您提供贴心的生活助手服务。</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-                        </div>
-                        <h3>多平台同步</h3>
-                        <p>支持Apple Watch集成、多设备同步、桌面组件或视觉工具，随时随地管理您的生活。</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                        </div>
-                        <h3>社交与分享</h3>
-                        <p>朋友监督功能、分享图片分享海报、成就系统，让自我提升变成有趣的社交体验。</p>
+                    <div class="feature-text">
+                        <h3>动动嘴、敲敲字，日程就听话</h3>
+                        <p>无论是发语音还是打字聊天，你的日程、待办都能被AI秒懂并安排得妥妥当当。告别繁琐，就这么简单！</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="services">
+        <section id="feature-shortcut" class="feature-section alt-bg">
             <div class="container">
-                <h2 class="section-title">服务介绍</h2>
-                <div class="services-grid">
-                    <div class="service-item">
-                        <h4>基础功能</h4>
-                        <p>免费提供核心的日程管理和基础习惯培养功能</p>
+                <div class="feature-layout layout-reversed">
+                    <div class="feature-image">
+                        <img src="shortcut.jpg" alt="快捷指令一出手，信息秒变日程">
                     </div>
-                    <div class="service-item">
-                        <h4>高级功能</h4>
-                        <p>付费解锁AI智能建议、高级同步、群组功能等</p>
+                    <div class="feature-text">
+                        <h3>“快捷指令”一出手，信息秒变日程</h3>
+                        <p>还在手动复制粘贴？用iPhone的快捷指令，任何App里的信息都能一键识别，嗖的一下变成你的日程或待办。</p>
                     </div>
-                    <div class="service-item">
-                        <h4>个性化定制</h4>
-                        <p>根据用户需求提供定制化的习惯培养方案</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="feature-sync" class="feature-section">
+            <div class="container">
+                <div class="feature-layout">
+                    <div class="feature-image">
+                        <img src="设备换着用.png" alt="设备换着用，进度不掉线">
                     </div>
-                    <div class="service-item">
-                        <h4>数据分析</h4>
-                        <p>详细的习惯追踪分析和成长报告</p>
+                    <div class="feature-text">
+                        <h3>设备换着用，进度不掉线</h3>
+                        <p>手机、电脑、手表...无论你在哪块屏幕前，你的日程和习惯都已“丝滑”同步，无缝衔接你的每一个瞬间。</p>
                     </div>
-                    <div class="service-item">
-                        <h4>社区支持</h4>
-                        <p>用户社区、经验分享、互相监督</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="feature-companion" class="feature-section alt-bg">
+            <div class="container">
+                <div class="feature-layout layout-reversed">
+                    <div class="feature-image">
+                        <img src="关心你.png" alt="不催你，只关心你">
                     </div>
-                    <div class="service-item">
-                        <h4>技术支持</h4>
-                        <p>7x24小时技术支持和用户反馈处理</p>
+                    <div class="feature-text">
+                        <h3>不催你，只关心你</h3>
+                        <p>我们不做冰冷的任务机器，只想做那个默默关心你的“电子陪”。这里没有KPI，只有温暖的提醒和鼓励。</p>
                     </div>
                 </div>
             </div>
@@ -449,10 +399,10 @@
                 <div class="about-content">
                     <p>
                         方便日历是一款革命性的AI智能日程助手，我们致力于通过先进的大语言模型技术，
-                        帮助用户更高效地管理时间、培养良好习惯，并在这个过程中提供情绪价值和社交支持。
+                        帮助用户更高效地管理时间、培养良好习惯，并在这个过程中提供轻松、无压力的情绪价值。
                     </p>
                     <p>
-                        我们相信，每个人都有潜力过上更有序、更充实的生活。通过AI技术的赋能，
+                        我们相信，每个人都有值得过上更有序、更充实的生活。通过AI技术的赋能，
                         我们让日程管理变得更加智能和人性化，让习惯培养变得更加轻松和有趣。
                     </p>
                     <p>
