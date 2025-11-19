@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>方便日历 - AI智能日程助手</title>
     <meta name="description" content="方便日历是一款基于AI的智能日程管理和习惯培养应用，让生活更有序，让成长更轻松">
+    <link rel="icon" href="定稿logo.png" type="image/png">
     <style>
         * {
             margin: 0;
@@ -290,18 +291,66 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .hero {
+                padding: 0 20px;
+                height: auto;
+                min-height: 100vh;
+                padding-top: 100px;
+                padding-bottom: 50px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .hero-logo img {
+                max-width: 200px;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
+            }
+
+            .hero-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
 
             .nav-links {
                 display: none;
             }
             
+            .feature-section {
+                padding: 60px 0;
+            }
+
             .feature-layout {
                 flex-direction: column !important;
                 gap: 2rem;
                 text-align: center;
+            }
+
+            .feature-layout.layout-reversed {
+                flex-direction: column !important;
+            }
+
+            .feature-text h3 {
+                font-size: 1.8rem;
+            }
+
+            .feature-text p {
+                font-size: 1.1rem;
+            }
+
+            #feature-natural-language .feature-image img {
+                max-width: 100%;
             }
 
             .feature-image-placeholder {
