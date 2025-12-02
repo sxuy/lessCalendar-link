@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "668FAKH7ZL.com.neozeppelin.lessCalendar.lessCalendar3",
+                "paths": [ "/wx_conn/*" ]
+            }
+        ]
+    }
+}
