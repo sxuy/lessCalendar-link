@@ -14,23 +14,24 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+            color: #1d1d1f;
+            background-color: #ffffff;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
             width: 100%;
         }
 
-        /* Header */
+        /* Header - 保持不动 */
         header {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(15px);
@@ -82,128 +83,153 @@
             color: #00ff88;
         }
 
-        .lang-icon {
-            font-size: 1rem;
-        }
-
-        /* Main Content */
+        /* New Support Page Design */
         main {
             flex: 1;
-            /* 移除 padding-top，改用 margin-top 配合 header 高度 */
-            margin-top: 64px; 
-            padding: 100px 0; /* 这里的 100px 是真正的页面内容与顶部栏的间距 */
+            margin-top: 64px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at top right, rgba(0, 255, 136, 0.05), transparent 400px),
+                        radial-gradient(circle at bottom left, rgba(0, 204, 102, 0.03), transparent 400px);
+        }
+
+        .support-hero {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .support-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            background: linear-gradient(180deg, #1d1d1f 0%, #434345 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .support-hero p {
+            font-size: 1.25rem;
+            color: #86868b;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .contact-section {
+            display: flex;
+            justify-content: center;
+            perspective: 1000px;
+        }
+
+        .email-card {
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 60px;
+            width: 100%;
+            max-width: 700px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .card-icon-wrapper {
+            width: 100px;
+            height: 100px;
+            background: #f5f5f7;
+            border-radius: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .support-card {
-            background: #fff;
-            border-radius: 24px;
-            padding: 80px 40px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-            text-align: center;
-            width: 100%;
-            max-width: 600px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: #1c1c1e;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .subtitle {
-            color: #666;
-            margin-bottom: 4rem;
-            font-size: 1.15rem;
-            max-width: 480px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.8;
-        }
-
-        .contact-method {
-            padding: 50px 40px;
-            border-radius: 24px;
-            background: #f9f9fb;
-            border: 1px solid #f0f0f2;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        .contact-method:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-            border-color: #00ff88;
-        }
-
-        .method-icon {
+            margin: 0 auto 40px;
             font-size: 3.5rem;
-            margin-bottom: 24px;
-            display: block;
+            transition: transform 0.5s ease;
         }
 
-        .method-title {
-            font-weight: 600;
-            font-size: 1.4rem;
+        .email-card:hover .card-icon-wrapper {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .email-card h2 {
+            font-size: 1.8rem;
             margin-bottom: 16px;
-            display: block;
-            color: #1c1c1e;
+            color: #1d1d1f;
         }
 
-        .method-link {
-            color: #00cc66;
+        .email-card .description {
+            color: #86868b;
+            font-size: 1.1rem;
+            margin-bottom: 48px;
+        }
+
+        .email-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #1d1d1f;
+            color: #ffffff;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1.6rem;
-            word-break: break-all;
-            transition: color 0.3s;
+            padding: 20px 48px;
+            border-radius: 100px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
 
-        .method-link:hover {
-            color: #00ff88;
+        .email-button:hover {
+            background: #00cc66;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 204, 102, 0.3);
+        }
+
+        .email-address {
+            display: block;
+            margin-top: 24px;
+            color: #86868b;
+            font-size: 1rem;
+            font-family: 'SF Mono', SFMono-Regular, ui-monospace, monospace;
         }
 
         /* Footer */
         footer {
-            background: #1c1c1e;
-            color: white;
+            background: #f5f5f7;
+            color: #86868b;
             text-align: center;
-            padding: 2.5rem 0;
-            margin-top: auto;
+            padding: 40px 0;
+            border-top: 1px solid #d2d2d7;
         }
 
         footer a {
-            color: #999;
+            color: #515154;
             text-decoration: none;
-            margin-left: 20px;
-            transition: color 0.3s;
+            margin: 0 12px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
         }
 
         footer a:hover {
-            color: #00ff88;
+            color: #00cc66;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             main {
-                padding: 60px 0;
+                align-items: flex-start;
+                padding-top: 40px;
             }
-            .support-card {
-                padding: 50px 20px;
-                border-radius: 0;
-                box-shadow: none;
-                background: transparent;
+            .email-card {
+                padding: 40px 24px;
+                border-radius: 24px;
             }
-            h1 {
-                font-size: 2rem;
-            }
-            .method-link {
-                font-size: 1.2rem;
-            }
-            .contact-method {
-                padding: 40px 20px;
+            .email-button {
+                padding: 16px 32px;
+                font-size: 1.1rem;
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -221,17 +247,21 @@
         </nav>
     </header>
 
-    <main class="container">
-        <div class="support-card">
-            <h1>联系支持</h1>
-            <p class="subtitle">在使用“方便日历”的过程中有任何疑问或建议？欢迎随时联系我们。</p>
-            
-            <div class="contact-method">
-                <span class="method-icon">📧</span>
-                <span class="method-title">官方支持邮箱</span>
-                <a href="mailto:contact@neozeppelin.com" class="method-link">contact@neozeppelin.com</a>
-                <p style="font-size: 1rem; margin-top: 20px; color: #8e8e93;">我们通常会在 24 小时内回复您的邮件</p>
-            </div>
+    <main>
+        <div class="container">
+            <section class="contact-section">
+                <div class="email-card">
+                    <div class="card-icon-wrapper">📧</div>
+                    <h2>通过邮件联系我们</h2>
+                    <p class="description">请将您的问题或想法发送至下方邮箱，我们通常会在 24 小时内给您答复。</p>
+                    
+                    <a href="mailto:contact@neozeppelin.com" class="email-button">
+                        发送邮件
+                    </a>
+                    
+                    <span class="email-address">contact@neozeppelin.com</span>
+                </div>
+            </section>
         </div>
     </main>
 
