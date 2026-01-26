@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Support - LessCalendar</title>
+    <meta name="description" content="Contact LessCalendar support team for help or feedback">
+    <link rel="icon" href="定稿logo.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            height: 64px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00ff88, #00cc66);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0;
+        }
+
+        .lang-switcher:hover {
+            color: #00ff88;
+        }
+
+        .lang-icon {
+            font-size: 1rem;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            margin-top: 64px; 
+            padding: 100px 0; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .support-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 80px 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #1c1c1e;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 4rem;
+            font-size: 1.15rem;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .contact-method {
+            padding: 50px 40px;
+            border-radius: 24px;
+            background: #f9f9fb;
+            border: 1px solid #f0f0f2;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .contact-method:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            border-color: #00ff88;
+        }
+
+        .method-icon {
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .method-title {
+            font-weight: 600;
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+            display: block;
+            color: #1c1c1e;
+        }
+
+        .method-link {
+            color: #00cc66;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.6rem;
+            word-break: break-all;
+            transition: color 0.3s;
+        }
+
+        .method-link:hover {
+            color: #00ff88;
+        }
+
+        /* Footer */
+        footer {
+            background: #1c1c1e;
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: #999;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #00ff88;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 60px 0;
+            }
+            .support-card {
+                padding: 50px 20px;
+                border-radius: 0;
+                box-shadow: none;
+                background: transparent;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .method-link {
+                font-size: 1.2rem;
+            }
+            .contact-method {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index-en.html" class="logo">LessCalendar</a>
+            <div class="nav-right">
+                <a href="support.html" class="lang-switcher" title="Switch to Chinese">
+                    <span class="lang-icon">🌐</span>
+                    <span>中文</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="support-card">
+            <h1>Contact Support</h1>
+            <p class="subtitle">Have any questions or suggestions while using LessCalendar? Feel free to contact us anytime.</p>
+            
+            <div class="contact-method">
+                <span class="method-icon">📧</span>
+                <span class="method-title">Official Support Email</span>
+                <a href="mailto:contact@neozeppelin.com" class="method-link">contact@neozeppelin.com</a>
+                <p style="font-size: 1rem; margin-top: 20px; color: #8e8e93;">We usually respond within 24 hours.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 LessCalendar. <a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></p>
+        </div>
+    </footer>
+</body>
+</html>
